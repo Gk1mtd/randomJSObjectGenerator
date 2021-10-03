@@ -1,36 +1,48 @@
+let howManyObjects = 25
 let randomObjectArray = []
 
-function getRandomInt(min, max) {
+// returns a random int in in range
+function getRandomRangeInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-function getRandomKey() {
+// returns a random String between
+function getRandomString() {
+    let minLength = 3
+    let maxLength = 16
     let randomKey = ""
-    for (let i = 0; i <= getRandomInt(3, 9); i++) {
-        randomKey += String.fromCharCode(getRandomInt(97, 122))
+    for (let i = 0; i <= getRandomRangeInt
+    (minLength, maxLength); i++) {
+        randomKey += String.fromCharCode(getRandomRangeInt(97, 122))
     }
     return randomKey
 }
-
-function getRandomValue () {
-    let randomValue = ""
-    for (let i = 0; i <= getRandomInt(3, 16); i++) {
-        randomValue += String.fromCharCode(getRandomInt(97, 122))
-    }
-    return randomValue
+// returns a random price
+function getRandomPrice () {
+    let randomPrice = ""
+    randomPrice = Math.random()*getRandomRangeInt(1, 999)
+    randomPrice =  randomPrice.toFixed(2)
+    return Number(randomPrice)
 }
-
+// creates a random Object with properties of name, price, currency, adress(is always emtpy)
 function createRandomObject() {
-    let newObject = {}
-    let randomKey = getRandomKey()
-    let randomValue = getRandomValue()
-    newObject[randomKey] = randomValue
+    let newObject = {
+        name: getRandomString(),
+        price: getRandomPrice(),
+        currency: "",
+        adress: ""
+    }
+    if (getRandomRangeInt(0,1))
+        newObject.currency = "€"
+    else
+    newObject.currency = "$"
     return newObject
 }
 
-randomObjectArray.push(createRandomObject())
+// filling randomObjectArray with as many random Objects as set on howManyObjects
+for (let i = 0; i < howManyObjects; i++) {
+    randomObjectArray.push(createRandomObject())
+}
 
-// console.log(getRandomKey())
-// console.log(getRandomValue())
 console.log(randomObjectArray)
