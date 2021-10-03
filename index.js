@@ -42,7 +42,11 @@ function createRandomObject() {
 
 // filling randomObjectArray with as many random Objects as set on howManyObjects
 for (let i = 0; i < howManyObjects; i++) {
-    randomObjectArray.push(createRandomObject())
+    let randomObject = createRandomObject()
+    randomObjectArray.push(randomObject)
+    console.log(getRandomPrice % 2);
+    if (!getRandomRangeInt(0,12))
+        randomObjectArray.push(randomObject)
 }
 
 console.log(randomObjectArray)
