@@ -1,4 +1,4 @@
-let howManyObjects = 25
+let howManyObjects = 55 // means the number of original objects, duplicates are not included
 let randomObjectArray = []
 
 // returns a random int in in range
@@ -44,9 +44,9 @@ function createRandomObject() {
 for (let i = 0; i < howManyObjects; i++) {
     let randomObject = createRandomObject()
     randomObjectArray.push(randomObject)
-    console.log(getRandomPrice % 2);
     if (!getRandomRangeInt(0,12))   // adds sometimes a duplicate
         randomObjectArray.push(randomObject)
 }
 
 console.log(randomObjectArray)
+console.log(`Created ${randomObjectArray.length} random objects.`)
