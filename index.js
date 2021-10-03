@@ -45,7 +45,7 @@ for (let i = 0; i < howManyObjects; i++) {
     let randomObject = createRandomObject()
     randomObjectArray.push(randomObject)
     console.log(getRandomPrice % 2);
-    if (!getRandomRangeInt(0,12))
+    if (!getRandomRangeInt(0,12))   // adds sometimes a duplicate
         randomObjectArray.push(randomObject)
 }
 
