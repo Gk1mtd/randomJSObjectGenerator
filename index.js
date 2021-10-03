@@ -1,4 +1,4 @@
-let howManyObjects = 55 // means the number of original objects, duplicates are not included
+let howManyObjects = 987 // means the number of original objects, duplicates are not included
 let randomObjectArray = []
 
 // returns a random int in in range
@@ -46,6 +46,7 @@ for (let i = 0; i < howManyObjects; i++) {
     randomObjectArray.push(randomObject)
     if (!getRandomRangeInt(0,12))   // adds sometimes a duplicate
         randomObjectArray.push(randomObject)
+    console.log(`Generating object #${i} of ${howManyObjects}.`);
 }
 
 console.log(randomObjectArray)
